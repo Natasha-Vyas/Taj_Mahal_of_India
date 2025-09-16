@@ -1,0 +1,218 @@
+main {
+    font-family: "Noto Serif", serif;
+
+    .announcement-bar {
+        .top-section {
+            background-color: #CAAF69;
+            padding: 10px 0;
+
+            .navbar-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 5rem;
+                margin: 0 auto;
+            }
+
+            .contact-info {
+                font-size: 14px;
+                color: #131417;
+
+                .phone,
+                .address {
+                    display: inline-block;
+                    margin-right: 20px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #131417;
+                    text-decoration: none;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 15px;
+
+                .social-icon {
+                    background-color: #131417;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    font-size: 18px;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: background-color 0.3s ease, color 0.3s ease;
+
+                    &:hover {
+                        color: #f5a623;
+                    }
+                }
+            }
+        }
+    }
+
+    .order-online-btn {
+        background-color: #000 !important;
+        color: #fff !important;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background-color: #333;
+        }
+    }
+
+    .heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #E6E2D9;
+        width: 100%;
+        padding: 10px 50px;
+        flex-wrap: wrap;
+
+        .logoMobile {
+            display: none;
+        }
+
+
+        .navbar-inverse {
+            background-color: #E6E2D9;
+            margin: 0px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            flex-wrap: wrap;
+
+            .navbar-collapse {
+                .navbar-nav {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    grid-gap: 10px;
+                    gap: 60px;
+                    width: 100%;
+                }
+
+                .navbar-nav>li>a {
+                    color: #131417;
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-align: center;
+                    text-transform: capitalize;
+                    text-decoration: none;
+
+                    img {
+                        width: 160px;
+                        object-fit: contain;
+                    }
+                }
+
+                .navbar-nav>li>.order-online-btn {
+                    background-color: #000 !important;
+                    color: #fff !important;
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    transition: background 0.3s ease;
+
+                    &:hover {
+                        background-color: #333;
+                    }
+                }
+
+            }
+
+            .navbar-header {
+                .navbar-toggle {
+                    background-color: #CAAF69;
+                    border: none;
+
+                    .icon-bar {
+                        background-color: #131417;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// Mobile 
+@media only screen and (max-device-width: 480px) {
+    main {
+        .announcement-bar {
+            display: none;
+        }
+
+        .heading {
+            display: flex;
+            padding: 10px;
+            width: 100%;
+            justify-content: space-between;
+
+            .deskMobile {
+                display: none;
+            }
+
+            .logoMobile {
+                display: inline;
+                width: 110px;
+                object-fit: contain;
+
+
+            }
+
+
+            .navbar-inverse {
+                background-color: #E6E2D9;
+                margin: 0px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                /* border: none; */
+                justify-content: space-between;
+                border: none;
+
+                .navbar-header {
+                    width: 100%;
+                    align-items: center;
+                }
+
+                .navbar-toggle {
+                    background-color: #CAAF69;
+                    border: none;
+                    padding: 10px;
+
+                    .material-symbols-outlined {
+                        background: transparent !important;
+                    }
+                }
+
+                .navbar-collapse {
+                    border: none;
+                    box-shadow: none;
+                    width: 100%;
+                    background-color: #CAAF69;
+
+                    .navbar-nav {
+                        flex-direction: column;
+                        gap: 5px;
+                        justify-content: center;
+                        text-align: center;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

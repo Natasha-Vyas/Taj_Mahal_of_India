@@ -1,0 +1,103 @@
+<app-header></app-header>
+<main>
+    <div class="video-container">
+        <video #myVideo autoplay [muted]="true" loop playsinline [src]="hero.homeVideo">
+        </video>
+    </div>
+
+
+    <section class="about">
+        <div class="image box1">
+            <img [src]="hero.homeImg1" />
+        </div>
+
+        <div class="content">
+            <h2>Authentic Indian Flavors, Right Here in Los Angeles</h2>
+            <p>At Taj Mahal of India, we bring you the rich heritage of Indian cuisine — crafted with love, tradition,
+                and
+                spices that tell a story. From flavorful curries and sizzling tandoori dishes to fresh naan and decadent
+                desserts, every bite is a celebration of India’s vibrant culture.</p>
+            <p>From rich curries and sizzling tandoori dishes to fresh naan and aromatic biryani, we bring the true
+                taste
+                of India to your table. Whether dining in, taking out, or catering a special event, we serve every guest
+                with warmth, flavor, and tradition.</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="content">
+            <h2>Our Story</h2>
+            <p>Founded with a passion for sharing India’s vibrant culture, Taj Mahal of India has become a place where
+                tradition meets taste. Our chefs bring years of experience and a deep love for cooking, preparing each
+                dish
+                with the freshest ingredients, fragrant spices, and time-honored recipes passed down through
+                generations.
+            </p>
+            <button routerLink="/about-us">Know More</button>
+        </div>
+        <div class="image box2">
+            <img
+                src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/c9ecdc7a-2ac7-48d7-8397-149c2b1dd1e3_1%20%282%29.jpeg" />
+        </div>
+    </section>
+
+    <section class="awards">
+        <div class="awards-box">
+            <h2>Accolades</h2>
+            <div class="carousel-container">
+                <div class="carousel-wrapper" [style.transform]="tajmahalGetTransform()"
+                    [style.transition]="transition">
+                    <div class="carousel-item" *ngFor="let image of hero.awards">
+                        <img [src]="image" alt="Accolade logo" />
+                    </div>
+                </div>
+
+                <button class="nav left" (click)="tajmahalPrevSlide()">‹</button>
+                <button class="nav right" (click)="tajmahalNextSlide()">›</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="flex-box">
+            <div *ngFor="let img of hero.homeGallery">
+                <img [src]="img" />
+            </div>
+        </div>
+    </section>
+
+    <section class="map">
+        <div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.625661942617!2d-118.37771730000001!3d34.0534723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b969b70bfcbf%3A0x359ce50de552d846!2s8566%20W%20Pico%20Blvd%2C%20Los%20Angeles%2C%20CA%2090035%2C%20USA!5e0!3m2!1sen!2sin!4v1755692195825!5m2!1sen!2sin"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <!-- Ring Badge -->
+    <section class="tm-ring">
+        <div class="tm-ring__badge" aria-label="FINEST INDIAN CUISINE IN LOS ANGELES">
+            <svg class="tm-ring__svg" viewBox="0 0 500 500" role="img">
+                <defs>
+                    <!-- Text follows this path -->
+                    <path id="tmRingPath" d="M250,250 m-185,0
+                 a185,185 0 1,1 370,0
+                 a185,185 0 1,1 -370,0" />
+                </defs>
+
+                <!-- One stroked circle creates the donut (transparent center) -->
+                <circle cx="250" cy="250" r="190" class="tm-ring__stroke" />
+
+                <!-- Circular text -->
+                <text class="tm-ring__text">
+                    <textPath href="#tmRingPath" startOffset="0%">
+                        ★ FINEST INDIAN CUISINE IN LOS ANGELES ★ FINEST INDIAN CUISINE IN LOS ANGELES ★
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+    </section>
+
+</main>
+
+<app-footer></app-footer>

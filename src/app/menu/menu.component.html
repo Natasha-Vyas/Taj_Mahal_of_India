@@ -1,0 +1,56 @@
+<app-header></app-header>
+<main>
+    <section class="banner">
+        <div class="content">
+            <h1>Menu<br /> by <br />Taj Mahal of India</h1>
+            <img
+                src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/f69213ce-73ca-42d9-9278-5d03f36510c6_gif_1.gif" />
+        </div>
+    </section>
+
+    <div class="categories">
+        <h2>Menu Plates</h2>
+
+        <div class="category" *ngFor="let category of categories; let i = index">
+            <div class="category-container">
+
+                <!-- header -->
+                <div class="category-header" (click)="toggleCategory2(i)"
+                    [ngStyle]="{ 'background-color': (hoverIndex === i || openIndex === i) ? '#CAAF69' : '#E6E2D9' }"
+                    (mouseenter)="hoverIndex = i" (mouseleave)="hoverIndex = null">
+
+                    <span>{{ category.categoryName }}</span>
+                    <span class="toggle-icon">
+                        {{ openIndex === i ? '-' : '+' }}
+                    </span>
+                </div>
+
+                <!-- content -->
+                <div class="category-content" *ngIf="openIndex === i">
+                    <h3>{{ category.categoryName }}</h3>
+                    <div *ngFor="let item of category.items" class="item">
+                        <p class="item-name">{{ item.itemName }}</p>
+                        <p class="item-description">{{ item.itemDescription }}</p>
+                        <p *ngIf="item.itemPrice" class="item-price">${{ item.itemPrice }}</p>
+                        <div class="special-order" *ngIf="item.price3">
+                            <div *ngIf="item.price1">
+                                <p *ngIf="item.price1">Chicken</p>
+                                <p *ngIf="item.price1">${{item.price1}}</p>
+                            </div>
+                            <div *ngIf="item.price2">
+                                <p *ngIf="item.price2">Lamb/Beef</p>
+                                <p *ngIf="item.price2">${{item.price2}}</p>
+                            </div>
+                            <div *ngIf="item.price3">
+                                <p *ngIf="item.price3">Fish/Shrimp</p>
+                                <p *ngIf="item.price3">${{item.price3}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+<app-footer></app-footer>

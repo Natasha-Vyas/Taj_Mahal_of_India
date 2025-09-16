@@ -1,0 +1,67 @@
+<main>
+    <header class="announcement-bar">
+        <div class="top-section">
+            <div class="navbar-container">
+                <div class="contact-info">
+                    <a class="phone" target="_blank" [href]="social.hrefPhone"><img
+                            src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/4071683a-f072-4ee2-b2c8-84c6afb71e13_Screenshot%202025-08-21%20130000.png" />{{contact}}</a>
+                </div>
+                <div class="contact-info">
+                    <a class="address" target="_blank" [href]="social.map"> <img
+                            src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/b530982a-15ca-493a-99d4-9a89a2f49a2d_Screenshot%202025-08-21%20130132.png" />{{address}}</a>
+                </div>
+
+                <div class="social-icons">
+                    <!-- <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a> -->
+                    <a [href]="social.yelp" class="social-icon"><i class="fab fa-yelp"></i></a>
+                    <a [href]="social.gmb" class="social-icon"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="heading">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="navbar-header">
+                <img *ngIf="logo" class="logoMobile" routerLink="/" [src]="logo" [style]="css.logo" />
+                <button *ngIf="close" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" (click)="change(!close)">
+                    <span [style]="css.navbar" class="sr-only">Toggle navigation</span>
+                    <span [style]="css.navbar" class="icon-bar"></span>
+                    <span [style]="css.navbar" class="icon-bar"></span>
+                    <span [style]="css.navbar" class="icon-bar"></span>
+                </button>
+
+                <button *ngIf="!close" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" (click)="change(!close)">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="material-icons-outlined"> close </span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li *ngFor="let link of links">
+                        <a *ngIf="link.type === 'internal' && !link.options" class="nav-link"
+                            queryParamsHandling="merge" [routerLink]="link.link" routerLinkActive="active">{{ link.text
+                            }}
+                        </a>
+                        <a *ngIf="link.type === 'logo'" id="logo" class="nav-link deskMobile"
+                            queryParamsHandling="merge" [routerLink]="link.link"><img [src]="logo"
+                                [style]="css.imgSize" />
+                        </a>
+                        <a *ngIf="link.type === 'internal' && link.options" class="nav-link" queryParamsHandling="merge"
+                            [routerLink]="link.link" routerLinkActive="active">{{ link.text }}
+                        </a>
+                        <a *ngIf="link.type === 'external'" class="nav-link" [href]="link.link"
+                            routerLinkActive="active" [style]="css.btnCss"
+                            [ngClass]="{'order-online-btn': link.text === 'Order Online'}">
+                            {{ link.text }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</main>

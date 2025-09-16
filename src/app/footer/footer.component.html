@@ -1,0 +1,89 @@
+<main>
+    <div class="mobile-cta-bar" *ngIf="true">
+        <a class="phone-bar" [href]="social.hrefPhone">
+            <span class="material-icons-outlined">call</span>
+            {{ contact }}
+        </a>
+        <div class="cta-buttons">
+            <a class="cta order" [href]="social.orderOnline">
+                Order Online
+            </a>
+            <a class="cta reservation" [routerLink]="'/contact-us'">
+                Reservations
+            </a>
+        </div>
+    </div>
+
+    <a class="reservation-fab" [routerLink]="'/contact-us'">
+        <span>Reservations</span>
+    </a>
+
+    <footer>
+        <section class="contact-section">
+            <div class="form">
+                <h2 *ngIf="!success">Write to Us</h2>
+                <h2 *ngIf="success">Form Submitted</h2>
+                <form [formGroup]="NameEmailPhoneMessage" *ngIf="!success">
+                    <input type="text" name="name" placeholder="Full Name*" required formControlName="name" />
+                    <input type="email" name="email" placeholder="Email*" required formControlName="email" />
+                    <input type="tel" name="phone" placeholder="Phone Number*" required formControlName="phone" />
+                    <textarea name="message" cols="30" rows="5" placeholder="Message"
+                        formControlName="message"></textarea>
+                    <button type="submit" [disabled]="!NameEmailPhoneMessage.valid"
+                        (click)="submitNameEmailPhoneMessage()">Submit</button>
+                </form>
+                <div class="success" *ngIf="success">
+                    <span class="material-icons-outlined">check_circle</span>
+                    <button routerLink="/">Home</button>
+                </div>
+            </div>
+            <div class="logo">
+                <img [src]="logo" />
+                <div class="social-icons">
+                    <a [href]="social.gmb">
+                        <img
+                            src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/aa597a49-0962-4f1c-8c50-32fc01fe3425_google-colorful.png" /></a>
+                    <a [href]="social.yelp">
+                        <img
+                            src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/b346e40f-d9dd-4383-9635-7a0dbe75e2dd_Yelp-Logo.png" /></a>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="border">
+                    <a [href]="social.hrefPhone">
+                        <img
+                            src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/3378503c-e329-4de9-bf86-9b685eba0feb_Screenshot%202025-08-20%20162259.png" />
+                        <p>{{contact}}</p>
+                    </a>
+                    <a [href]="social.hrefEmail">
+                        <img
+                            src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/a88c4bbb-d20c-4c4c-bfd1-84917b5f8bf1_Screenshot%202025-08-20%20162538.png" />
+                        <p>{{emailid}}</p>
+                    </a>
+                    <a [href]="social.map">
+                        <img
+                            src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/506e0813-42ae-4976-a2ba-bcd113cddbf8_Screenshot%202025-08-20%20162653.png" />
+                        <p>{{address}}</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="bottom-bar">
+            <p>© {{year}} {{brandName}} All rights reserved.</p>
+            <div class="ordering-icons">
+                <a [href]="social.dd">
+                    <img
+                        src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/b643b80b-6e47-4496-a984-fb75aa99aec7_door-dash.png" /></a>
+                <a [href]="social.ue">
+                    <img
+                        src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/c512123b-b723-4021-b3c4-630184078883_uber-eats.png" /></a>
+                <a href="{{social.grubhub}}">
+                    <img [style]="css['grubhibIcon']"
+                        src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/dd9b6455-9e8c-4b22-9b99-3847f3f9a60c_1656237504grubhub-logo-png.png" />
+                </a>
+            </div>
+            <a target="_blank" href="https://tryantler.com/home">Powered by Antler
+                Technologies</a>
+        </div>
+    </footer>
+</main>

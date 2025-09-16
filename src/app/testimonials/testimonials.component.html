@@ -1,0 +1,33 @@
+<app-header></app-header>
+<main>
+    <section class="banner">
+        <div class="content">
+            <h1>Testimonials<br /> – <br />Taj Mahal of India</h1>
+            <img
+                src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/f69213ce-73ca-42d9-9278-5d03f36510c6_gif_1.gif" />
+        </div>
+    </section>
+    <section class="testimonial">
+        <div class="about">
+            <h2>What Our Guests Say</h2>
+            <p>Real Stories. Real Flavors. Real Experiences.</p>
+            <p>At Taj Mahal of India, our guests are at the heart of everything we do. From first-time visitors to
+                longtime regulars, we’re proud to share the kind words and experiences of those who’ve dined with us.
+            </p>
+        </div>
+        <div class="guest-reviews">
+            <h2>⭐ Guest Testimonials</h2>
+            <img
+                src="https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/9ae08f6a-ec8a-48b6-b6db-9033fc540dc1_Screenshot%202025-08-21%20195942.png" />
+        </div>
+    </section>
+
+    <section class="reviews-container">
+        <div class="review" *ngFor="let review of hero.reviews">
+            <h3>{{review.name}}</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span>{{review.para}}</span>
+        </div>
+    </section>
+</main>
+<app-footer></app-footer>

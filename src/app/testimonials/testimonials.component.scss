@@ -1,0 +1,111 @@
+  main {
+      font-family: "Noto Serif", serif;
+
+      .banner {
+          background-color: #333333;
+
+          .content {
+              padding: 8rem 2rem;
+              display: grid;
+              gap: 10px;
+              align-items: center;
+              justify-content: center;
+
+              h1 {
+                  font-size: 50px;
+                  font-weight: 600;
+                  color: #FFFFFF;
+                  text-align: center;
+              }
+
+              img {
+                  width: 60px;
+                  margin: auto;
+              }
+          }
+      }
+
+      h2 {
+          font-size: 35px;
+          font-weight: 600;
+          color: #131417;
+          text-align: center;
+      }
+
+      p {
+          text-align: center;
+          color: #131417;
+          font-weight: 400;
+          font-size: 16px;
+      }
+
+      .testimonial {
+          background-color: #E6E2D9;
+          padding: 5rem;
+          display: grid;
+          text-align: center;
+          gap: 20px;
+
+          .about {
+              max-width: 1000px;
+              margin: auto;
+          }
+
+          .guest-reviews {
+              img {
+                  width: 80%;
+              }
+          }
+      }
+
+      .reviews-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 20px;
+          border: 5rem solid #CAAF69;
+          padding: 5rem;
+          background-color: #E6E2D9;
+
+          .review {
+              width: 31%;
+              display: grid;
+              padding: 2rem;
+              text-align: center;
+              background-color: #fff;
+
+              h3 {}
+
+              p {}
+
+              span {}
+          }
+      }
+  }
+
+  // Mobile
+  @media only screen and (max-device-width: 480px) {
+      main {
+          .testimonial {
+              padding: 2rem;
+
+              .about {}
+
+              .guest-reviews {
+                  img {
+                      width: 100%;
+                  }
+              }
+          }
+
+          .reviews-container {
+              flex-direction: column;
+              border: 2rem solid #CAAF69;
+              padding: 2rem;
+
+              .review {
+                  width: 100%;
+              }
+          }
+      }
+  }
