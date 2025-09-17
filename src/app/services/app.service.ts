@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppService {
 
   constructor(private http: HttpClient) { }
-  public formCode: any;
+  public formCode = 'knl5SLjIh';
   contactUsSubmission(data: any): Observable<any> {
     let requestBody = {
       ...data,
