@@ -22,7 +22,7 @@ const DATA = {
     'https://s3.ap-south-1.amazonaws.com/cdn.ghc.health/a95ac400-80b3-4563-9848-112c9be11ed2_3-removebg-preview.png',
   brandName: 'Taj Mahal of India',
   address: '8566 W Pico Blvd, Los Angeles, CA 90035, United States',
-  contact: '213-563-9706',
+  contact: '310-652-8598',
   email: 'sara.mrs2727@gmail.com',
   css: { grubhibIcon: 'width:90px;' },
   social: {
@@ -34,7 +34,7 @@ const DATA = {
     ue: 'https://www.ubereats.com/store/taj-mahal-of-india-pico-blvd/B9h6_zuBROiKDhdZ9JF2eA',
     grubhub:
       'https://www.grubhub.com/restaurant/taj-mahal-of-india-8566-w-pico-blvd-los-angeles/70527?pickup=true',
-    hrefPhone: 'tel:213-563-9706',
+    hrefPhone: 'tel:310-652-8598',
     hrefEmail: 'mailto:sara.mrs2727@gmail.com',
     map: 'https://maps.app.goo.gl/7JGz7DD1CyLyvWek7',
   } as Social,

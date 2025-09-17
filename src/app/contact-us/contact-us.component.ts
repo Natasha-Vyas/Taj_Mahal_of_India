@@ -6,10 +6,10 @@ import { AppService } from '../services/app.service';
 const DATA = {
   brandName: 'Taj Mahal of India',
   address: '8566 W Pico Blvd, Los Angeles, CA 90035, United States',
-  contact: '213-563-9706',
+  contact: '310-652-8598',
   email: 'sara.mrs2727@gmail.com',
   social: {
-    hrefPhone: 'tel:213-563-9706',
+    hrefPhone: 'tel:310-652-8598',
     hrefEmail: 'mailto:sara.mrs2727@gmail.com',
     map: 'https://maps.app.goo.gl/7JGz7DD1CyLyvWek7',
   },
